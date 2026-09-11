@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verificar Selo Loja Blindada</title>
+<meta name="robots" content="index,follow">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Poppins,system-ui,sans-serif;background:#0B1626;color:#EAF0F7;line-height:1.55}
+main{max-width:520px;margin:0 auto;padding:40px 22px}
+h1{font-size:22px;margin:0 0 6px}
+.sub{color:#8FA0B8;font-size:14px;margin:0 0 24px}
+form{display:flex;gap:8px;margin:0 0 28px}
+input{flex:1;font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid #2A3A55;background:#101D33;color:#fff;text-transform:uppercase}
+button{font:inherit;font-weight:600;padding:12px 18px;border-radius:10px;border:0;background:#F2B33D;color:#0B1626;cursor:pointer}
+.card{border-radius:16px;padding:24px;border:2px solid #2A3A55;background:#101D33}
+.card.ok{border-color:#22C55E}.card.exp{border-color:#F2B33D}.card.no{border-color:#E5484D}
+.status{font-weight:700;font-size:18px;margin:0 0 12px}
+.ok .status{color:#22C55E}.exp .status{color:#F2B33D}.no .status{color:#E5484D}
+.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #1E2C45;font-size:15px}
+.row span:first-child{color:#8FA0B8}
+.note{color:#8FA0B8;font-size:13px;margin:22px 0 0}
+a{color:#F2B33D}
+</style></head><body><main>
+<h1>Verificar Selo Loja Blindada</h1>
+<p class="sub">Digite o código que está no selo (formato LB-AAAA-NNNN). Emitido por Beto Mendes, @mizpahcyber.</p>
+<form id="f"><input id="c" placeholder="LB-2026-0001" autocomplete="off"><button>Conferir</button></form>
+<div id="out"></div>
+<p class="note">O selo atesta que, na data indicada, a loja comprovou por prints: dois fatores no Instagram por aplicativo, verificação em duas etapas no WhatsApp Business e acessos do Business Suite revisados. Não é garantia contra golpe nem substitui a orientação do seu banco. Lista completa em <a href="https://instagram.com/mizpahcyber">@mizpahcyber</a>.</p>
+</main>
+<script>
+const out=document.getElementById('out'),inp=document.getElementById('c');
+const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+async function check(code){
+  code=(code||'').trim().toUpperCase();
+  if(!/^LB-\d{4}-\d{4}$/.test(code)){out.innerHTML='<div class="card no"><p class="status">Código inválido</p><p>Use o formato LB-AAAA-NNNN.</p></div>';return;}
+  let list=[];
+  try{list=await (await fetch('/selos.json',{cache:'no-store'})).json();}catch(e){out.innerHTML='<div class="card no"><p class="status">Não foi possível consultar</p><p>Tente de novo em instantes.</p></div>';return;}
+  const s=list.find(x=>x.codigo===code);
+  if(!s){out.innerHTML=`<div class="card no"><p class="status">Selo não encontrado</p><p>O código <strong>${code}</strong> não está na lista. Um selo com código fora da lista é falso.</p></div>`;return;}
+  const hoje=new Date().toISOString().slice(0,10);
+  let cls='ok',st='Selo válido';
+  if(s.revogado){cls='no';st='Selo revogado';}
+  else if(s.validade<hoje){cls='exp';st='Selo vencido';}
+  out.innerHTML=`<div class="card ${cls}"><p class="status">${st}</p>
+  <div class="row"><span>Loja</span><span>${s.loja}</span></div>
+  ${s.instagram?`<div class="row"><span>Instagram</span><span>@${s.instagram.replace('@','')}</span></div>`:''}
+  <div class="row"><span>Código</span><span>${s.codigo}</span></div>
+  <div class="row"><span>Conferido em</span><span>${fmt(s.emitido)}</span></div>
+  <div class="row"><span>Válido até</span><span>${fmt(s.validade)}</span></div>
+  ${s.revogado?`<div class="row"><span>Motivo</span><span>${s.motivo||'revogado pelo emissor'}</span></div>`:''}
+  </div>`;
+}
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();check(inp.value);});
+const q=new URLSearchParams(location.search).get('c');
+if(q){inp.value=q;check(q);}
+</script>
+</body></html>

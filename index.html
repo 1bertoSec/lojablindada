@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Loja Blindada em 48h: checklist de segurança para lojas no Instagram e WhatsApp</title>
+<meta name="description" content="Feche em 48 horas as portas que golpistas usam para invadir lojas no Instagram, WhatsApp e marketplaces. Checklist interativo de 30 itens, com acompanhamento e Selo verificado. Sem termos técnicos.">
+<meta property="og:title" content="Loja Blindada em 48h">
+<meta property="og:description" content="O que fazer hoje para não perder sua conta, seu dinheiro e seus clientes.">
+<meta property="og:image" content="img/mockup.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1626; --navy-2:#16233A; --ink:#14213D; --paper:#F7F8FB; --line:#E3E8F0;
+    --amber:#F2B33D; --amber-ink:#9A6B00; --red:#E5484D; --green:#22C55E; --muted:#6B7A93;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;color-scheme:light only;background:#fff}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;color:#0B1626;background:#fff;line-height:1.6;font-size:18px;-webkit-text-size-adjust:100%}
+  h1,h2,h3{line-height:1.15;margin:0 0 .5em}
+  h1{font-size:clamp(30px,6vw,48px);font-weight:700;letter-spacing:-.5px}
+  h2{font-size:clamp(24px,4vw,34px);font-weight:700;color:inherit}
+  h3{font-size:19px;font-weight:600}
+  p{margin:0 0 1em}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  .narrow{max-width:680px}
+  section{padding:64px 0;background:#fff;color:#0B1626}
+  .btn{display:inline-block;background:var(--amber);color:var(--navy);font-weight:700;text-decoration:none;padding:16px 28px;border-radius:12px;font-size:18px;box-shadow:0 8px 24px rgba(242,179,61,.35)}
+  .btn:hover{background:#f7c25b}
+  .btn:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  .btn-note{display:block;margin-top:10px;color:var(--muted);font-size:14px}
+  .dark{background:var(--navy);color:#EAF0F7}
+  .dark p{color:#C9D4E4}
+  .dark .btn-note{color:#8FA0B8}
+
+  /* hero */
+  .hero{padding:56px 0 40px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .hero .lead{font-size:19px;max-width:520px}
+  .dm{background:#fff;color:var(--ink);border-radius:18px;padding:18px 18px 16px;box-shadow:0 30px 60px rgba(0,0,0,.45);max-width:400px;margin:0 auto;font-size:15px;position:relative}
+  .dm .from{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .dm .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7c4dff,#ff4d8d)}
+  .dm .name{font-weight:600;font-size:14px}
+  .dm .name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+  .dm .bubble{background:#EEF2F8;border-radius:14px 14px 14px 4px;padding:12px 14px;line-height:1.45}
+  .dm .bubble a{color:#2a5bd7;text-decoration:underline;word-break:break-all}
+  .dm .stamp{position:absolute;right:-10px;top:-14px;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;transform:rotate(6deg);box-shadow:0 6px 16px rgba(229,72,77,.5)}
+  .dm .verdict{margin-top:12px;font-size:13px;color:var(--muted)}
+  .dm .verdict b{color:var(--red)}
+
+  /* scenes */
+  .scenes{background:#EEF2F8}
+  .scenes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+  .scene{border-left:4px solid var(--red);padding:4px 0 4px 18px}
+  .scene h3{margin-bottom:6px}
+  .scene p{margin:0;color:#0B1626;font-size:17px;font-weight:500}
+  .scenes .punch{margin-top:34px;font-size:20px;font-weight:600;max-width:640px}
+
+  /* what you get */
+  .blocks{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+  .blocks li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+  .blocks .n{width:44px;height:44px;border-radius:10px;background:var(--navy);color:var(--amber);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .blocks b{display:block;color:#0B1626;font-size:19px;font-weight:700;margin-bottom:2px}
+  .blocks span{color:#0B1626;font-size:18px;line-height:1.55;font-weight:500}
+  .extras{margin-top:26px;padding:18px 20px;background:#EEF2F8;border-left:4px solid var(--amber);border-radius:0 12px 12px 0;color:#0B1626;font-size:18px;font-weight:500}
+  .mock{display:block;width:100%;height:auto;border-radius:16px;margin-top:34px}
+
+  /* pages */
+  .pages{background:#EEF2F8}
+  .pages .row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  .pages figure{margin:0}
+  .pages img{width:100%;height:auto;border-radius:8px;box-shadow:0 14px 34px rgba(20,33,61,.18);display:block}
+  .pages figcaption{font-size:15px;color:var(--ink);margin-top:10px}
+
+  /* author */
+  .author .wrap{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center}
+  .author img{width:100%;height:auto;display:block}
+  .author h2{margin-bottom:4px}
+  .author .role{color:var(--amber);font-weight:500;margin-bottom:16px}
+
+  /* price */
+  .price{text-align:center}
+  .price .box{background:#fff;color:var(--ink);border-radius:22px;padding:36px 28px;max-width:520px;margin:0 auto;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+  .price .old{color:var(--muted);text-decoration:line-through;font-size:16px}
+  .price .val{font-size:56px;font-weight:700;line-height:1;margin:6px 0 4px}
+  .price .val sup{font-size:22px;vertical-align:top;margin-right:2px}
+  .price .cmp{color:var(--ink);margin-bottom:22px}
+  .price ul{list-style:none;padding:0;margin:20px 0 0;text-align:left;font-size:16px;color:var(--ink)}
+  .price li{padding:6px 0 6px 28px;position:relative}
+  .price li::before{content:"";position:absolute;left:0;top:11px;width:16px;height:16px;border-radius:50%;background:var(--green)}
+  .guarantee{margin-top:22px;font-size:15px}
+
+  /* faq */
+  details{border-top:1px solid var(--line);padding:16px 0}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;font-weight:700;font-size:18px;color:#0B1626;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--amber);font-weight:700;font-size:22px;line-height:1}
+  details[open] summary::after{content:"-"}
+  details p{margin:10px 0 0;color:#0B1626;font-size:18px;line-height:1.6;font-weight:500}
+
+  footer{padding:28px 0;font-size:13px;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+
+  /* sticky mobile cta */
+  .sticky{position:fixed;left:0;right:0;bottom:0;background:var(--navy);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -10px 30px rgba(0,0,0,.3);z-index:9}
+  .sticky .p{color:#fff;font-weight:600;font-size:15px;line-height:1.2}
+  .sticky .p small{display:block;color:#8FA0B8;font-weight:400;font-size:12px}
+  .sticky .btn{padding:12px 18px;font-size:15px;box-shadow:none;white-space:nowrap}
+
+  @media (max-width:820px){
+    body{font-size:16px}
+    section{padding:48px 0}
+    .hero .wrap,.author .wrap{grid-template-columns:1fr}
+    .hero .dm{margin-top:8px}
+    .scenes .grid,.pages .row{grid-template-columns:1fr}
+    .pages .row{grid-template-columns:1fr 1fr}
+    .pages figure:last-child{display:none}
+    .author img{max-width:200px}
+    .sticky{display:flex}
+    body{padding-bottom:78px}
+  }
+
+  /* seções novas: acompanhamento e Selo */
+  section.lb-sec{max-width:none;padding:0;background:transparent}
+  section.lb-sec .lb-wrap{max-width:860px;margin:0 auto;padding:64px 22px}
+  section.lb-sec h2{font-family:Poppins,system-ui,sans-serif;font-size:clamp(24px,4vw,34px);line-height:1.15;color:#0B1626;margin:0 0 10px}
+  section.lb-sec .lb-lead{font-size:17px;color:#3B4A63;max-width:620px;margin:0 0 32px}
+
+  /* BLOCO A: linha do tempo dos primeiros dias */
+  .lb-tl{list-style:none;margin:0;padding:0;border-left:3px solid #E3E8F0}
+  .lb-tl li{position:relative;padding:0 0 26px 28px}
+  .lb-tl li:last-child{padding-bottom:0}
+  .lb-tl li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:#F2B33D;border:3px solid #fff;box-shadow:0 0 0 2px #F2B33D}
+  .lb-tl li.lb-green::before{background:#22C55E;box-shadow:0 0 0 2px #22C55E}
+  .lb-tl .lb-when{display:block;font-weight:600;color:#0B1626;font-size:14px;margin-bottom:2px}
+  .lb-tl p{margin:0;color:#3B4A63;font-size:15px;line-height:1.55}
+  .lb-promise{margin:36px 0 0;padding:20px 22px;background:#0B1626;color:#C9D4E4;border-radius:14px;font-size:15px;line-height:1.6}
+  .lb-promise strong{color:#F2B33D;font-weight:600}
+
+  /* BLOCO B: selo */
+  div.lb-selo{background:#0B1626;color:#EAF0F7}
+  div.lb-selo section.lb-sec h2{color:#fff}
+  div.lb-selo .lb-lead{color:#8FA0B8}
+  .lb-selo-grid{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
+  @media(max-width:700px){.lb-selo-grid{grid-template-columns:1fr}}
+  .lb-badge{background:#101D33;border:2px solid #F2B33D;border-radius:22px;padding:28px 22px;text-align:center}
+  .lb-shield{width:88px;height:98px;margin:0 auto 14px}
+  .lb-badge .lb-tag{color:#F2B33D;font-size:12px;font-weight:600;letter-spacing:1px;margin:0 0 6px}
+  .lb-badge .lb-loja{font-size:22px;font-weight:700;color:#fff;margin:0 0 4px;line-height:1.2}
+  .lb-badge .lb-mes{color:#8FA0B8;font-size:13px;margin:0 0 16px}
+  .lb-badge .lb-code{display:inline-block;background:#F2B33D;color:#0B1626;font-weight:700;font-size:17px;border-radius:999px;padding:8px 20px;letter-spacing:.5px}
+  .lb-badge .lb-check{color:#8FA0B8;font-size:12px;margin:12px 0 0}
+  .lb-steps{list-style:none;margin:0;padding:0;counter-reset:s}
+  .lb-steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;margin:0 0 18px;font-size:15px;line-height:1.55;color:#C9D4E4}
+  .lb-steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;background:#F2B33D;color:#0B1626;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .lb-steps strong{color:#fff;font-weight:600;display:block}
+  .lb-verify{margin:26px 0 0;padding:16px 18px;border:1px solid #2A3A55;border-radius:12px;font-size:14px;color:#C9D4E4;line-height:1.55}
+  .lb-verify code{background:#1B2A44;color:#F2B33D;border-radius:4px;padding:1px 6px;font-size:13px}
+  .lb-verify .lb-false{color:#E5484D;font-weight:600}
+
+  @media (max-width:820px){
+    section.lb-sec .lb-wrap{padding:48px 22px}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero dark">
+  <div class="wrap">
+    <div>
+      <h1>Sua loja tem a mesma senha no Instagram, no WhatsApp e no marketplace desde 2021?</h1>
+      <p class="lead">Em 48 horas, feche as portas que golpistas usam para invadir lojas de eletrônicos. Sem termos técnicos. Passo a passo, no celular, com caixinha para marcar.</p>
+      <a class="btn" href="#comprar">Quero blindar minha loja por R$67</a>
+      <span class="btn-note">Checklist interativo de 30 itens · acompanhamento e Selo verificado · garantia de 7 dias</span>
+    </div>
+    <div class="dm" aria-label="Exemplo de mensagem de golpe">
+      <span class="stamp">golpe</span>
+      <div class="from"><div class="av"></div><div class="name">Meta Copyright Center<small>enviou uma mensagem</small></div></div>
+      <div class="bubble">Olá, sua conta foi denunciada por violação de direitos autorais. Se você acredita que isso é um erro, conteste em <a href="#golpes">instagram-help-center.com/apelar</a>. Caso não haja resposta em 24 horas, sua conta será permanentemente removida.</div>
+      <div class="verdict"><b>3 sinais de golpe nesta mensagem.</b> O checklist ensina sua equipe a ver os três em 5 segundos.</div>
+    </div>
+  </div>
+</section>
+
+<section class="scenes">
+  <div class="wrap">
+    <h2>Quase nunca é um hacker. É uma porta que ficou aberta.</h2>
+    <div class="grid">
+      <div class="scene"><h3>O Instagram some numa quinta-feira</h3><p>Um atendente clicou no "aviso de direitos autorais" e digitou a senha. Em 20 minutos o perfil está vendendo iPhone com 40% de desconto para os seus seguidores, e o Pix vai para o golpista.</p></div>
+      <div class="scene"><h3>O WhatsApp da loja vira dois</h3><p>Um número novo, com a sua foto e o seu nome, pede pagamento adiantado aos seus clientes. Você só descobre quando o terceiro cliente reclama.</p></div>
+      <div class="scene"><h3>O ex-funcionário ainda entra</h3><p>A senha do dono foi compartilhada com a equipe em 2022. Ninguém trocou. A pessoa saiu em março e continua com acesso ao Business Suite.</p></div>
+    </div>
+    <p class="punch">Todos os três se resolvem com configurações que já existem nos aplicativos e levam menos de duas horas. O problema é que ninguém explicou, em português claro, onde ficam e por quê.</p>
+  </div>
+</section>
+
+<section id="golpes">
+  <div class="wrap narrow">
+    <h2>O que tem dentro</h2>
+    <p>Cinco blocos, na ordem de urgência. Cada item traz o caminho do menu, o que marcar e por que aquilo importa, em uma frase.</p>
+    <ul class="blocks">
+      <li><div class="n">1</div><div><b>Instagram e Meta</b><span>8 itens que fecham a porta de entrada: dois fatores por aplicativo, sessões ativas, e-mail de recuperação da loja, quem tem acesso no Business Suite e como tirar um ex-funcionário em 2 minutos.</span></div></li>
+      <li><div class="n">2</div><div><b>WhatsApp Business</b><span>7 itens e o roteiro exato para o dia em que o número for clonado, nos dois cenários: quando o seu WhatsApp sai do celular e quando aparece um número falso com a sua foto.</span></div></li>
+      <li><div class="n">3</div><div><b>E-mail e Google da loja</b><span>A chave-mestra que ninguém protege: quem entra no seu e-mail pede senha nova em todo o resto. Inclui como montar um gerenciador de senhas para a equipe em 15 minutos.</span></div></li>
+      <li><div class="n">4</div><div><b>Os 4 golpes de mensagem que derrubam lojas</b><span>Um card por golpe: como a mensagem chega, os 3 sinais de que é falsa, o que fazer. Feito para mostrar a quem atende.</span></div></li>
+      <li><div class="n">5</div><div><b>Plano de emergência</b><span>O roteiro da primeira hora se a conta for invadida, com 3 modelos de comunicado prontos para copiar e mandar aos clientes.</span></div></li>
+    </ul>
+    <div class="extras">Mais o checklist-resumo de 1 página para imprimir e colar no caixa, e a rotina mensal de 15 minutos para nada voltar a abrir.</div>
+    <img class="mock" src="img/mockup.png" alt="Capa e páginas internas do checklist Loja Blindada em 48h, exibidas em um mockup com celular" width="1600" height="900" loading="lazy">
+  </div>
+</section>
+
+<section class="lb-sec" id="depois">
+  <div class="lb-wrap">
+    <h2>O checklist é a metade. A outra metade vem depois.</h2>
+    <p class="lb-lead">O arquivo você recebe na hora. O que ele vale depende do que acontece nos dias seguintes, e isso fica comigo.</p>
+
+    <ol class="lb-tl">
+      <li>
+        <span class="lb-when">Hoje</span>
+        <p>O checklist chega no e-mail e na área de membros. Você abre no celular da loja e faz os Blocos 1, 2 e 3 (uns 90 minutos). Cada caixinha marcada é uma porta fechada.</p>
+      </li>
+      <li>
+        <span class="lb-when">Travou em um item?</span>
+        <p>Manda o número do item e um print no direct do @mizpahcyber. Eu respondo em até 48 horas úteis, sempre. Dúvida que se repete vira item da próxima versão.</p>
+      </li>
+      <li>
+        <span class="lb-when">Dia 7</span>
+        <p>Eu te escrevo perguntando se os três primeiros blocos estão marcados. Se estão, você me manda três prints e eu confiro um por um.</p>
+      </li>
+      <li class="lb-green">
+        <span class="lb-when">Prints conferidos</span>
+        <p>Sua loja recebe o Selo Loja Blindada, com código único e nome na lista pública. Feito para os stories e para o cliente que pergunta "essa loja é segura?".</p>
+      </li>
+      <li>
+        <span class="lb-when">Quando o menu do app mudar</span>
+        <p>Você recebe a versão nova do checklist pelo e-mail da Kiwify, sem pagar nada. O golpe de amanhã entra na próxima edição.</p>
+      </li>
+    </ol>
+
+    <div class="lb-promise">
+      <strong>Compromisso, por escrito:</strong> resposta em até 48 horas úteis, selo emitido só após conferência dos prints, lista pública sempre atualizada e toda versão nova sem custo. Isso vale para quem está na lista de compradores. O reembolso encerra o acompanhamento.
+    </div>
+  </div>
+</section>
+
+<section class="pages">
+  <div class="wrap">
+    <h2>Páginas de verdade, não promessa</h2>
+    <div class="row">
+      <figure><img src="img/golpe.jpg" alt="Página do card do golpe de direitos autorais" loading="lazy"><figcaption>Um golpe por página: como chega, 3 sinais, o que fazer.</figcaption></figure>
+      <figure><img src="img/emergencia.jpg" alt="Página do plano de emergência da primeira hora" loading="lazy"><figcaption>Plano de emergência: consegui entrar / não consigo entrar.</figcaption></figure>
+      <figure><img src="img/checklist.jpg" alt="Página do checklist-resumo para imprimir" loading="lazy"><figcaption>Checklist-resumo para imprimir e colar na loja.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="lb-selo" id="selo">
+<section class="lb-sec">
+  <div class="lb-wrap">
+    <h2>Selo Loja Blindada, verificado</h2>
+    <p class="lb-lead">Não é um adesivo. É uma conferência feita por quem trabalha com defesa contra fraude, com código que qualquer cliente consegue checar.</p>
+
+    <div class="lb-selo-grid">
+      <div class="lb-badge" aria-label="Exemplo do Selo Loja Blindada">
+        <svg class="lb-shield" viewBox="0 0 88 98" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M44 4 L80 17 L80 46 L72 66 L60 82 L44 94 L28 82 L16 66 L8 46 L8 17 Z" fill="#16233A" stroke="#F2B33D" stroke-width="3"/>
+          <path d="M29 51 L40 62 L60 38" stroke="#22C55E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="lb-tag">LOJA BLINDADA · VERIFICADA</p>
+        <p class="lb-loja">Nome da sua loja</p>
+        <p class="lb-mes">Segurança digital conferida em setembro de 2026</p>
+        <span class="lb-code">LB-2026-0001</span>
+        <p class="lb-check">Confira o código em lojablindada.netlify.app/selo</p>
+      </div>
+
+      <div>
+        <ol class="lb-steps">
+          <li><span><strong>Você faz os Blocos 1, 2 e 3</strong>Dois fatores no Instagram por aplicativo, duas etapas no WhatsApp Business e a lista de quem tem acesso no Business Suite.</span></li>
+          <li><span><strong>Manda três prints no direct</strong>Com os dados pessoais tarjados. Eu olho cada tela e te digo o que vi. Se algo estiver errado, te aponto o item para corrigir.</span></li>
+          <li><span><strong>Recebe o selo com código único</strong>Duas imagens (feed e stories) com o nome da loja, o mês e o código LB-AAAA-NNNN. O código entra na lista pública no mesmo dia.</span></li>
+          <li><span><strong>Seu cliente confere em 5 segundos</strong>O código no selo leva a uma página que mostra a loja, a data e a validade. Se não está na lista, não é selo.</span></li>
+        </ol>
+
+        <div class="lb-verify">
+          Validade de 6 meses, renovável com três prints novos. Verificação em <code>lojablindada.netlify.app/selo?c=LB-2026-0001</code> ou pelo QR na própria imagem. <span class="lb-false">Selo sem código na lista é falso.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="author dark">
+  <div class="wrap">
+    <img src="img/autor.png" alt="Beto Mendes" width="500" height="658" loading="lazy">
+    <div>
+      <h2>Beto Mendes</h2>
+      <div class="role">Analista sênior de cibersegurança em banco, equipe de defesa</div>
+      <p>Passo o dia observando como fraudes e invasões acontecem de verdade, em tempo real, contra quem tem muito a perder, e desmontando o caminho que o golpista percorreu.</p>
+      <p>Escrevi este checklist porque os golpes que derrubam lojas no Instagram não são sofisticados. São os mesmos truques de sempre, aplicados contra quem nunca teve alguém para explicar o que fazer. Um banco tem uma equipe inteira para isso. Uma loja tem o dono, o celular e a esperança de que nada aconteça.</p>
+    </div>
+  </div>
+</section>
+
+<section id="comprar" class="price dark" style="background:var(--navy-2)">
+  <div class="wrap">
+    <div class="box">
+      <div class="old">Valor de uma consultoria de segurança: a partir de R$800</div>
+      <div class="val"><sup>R$</sup>67</div>
+      <div class="cmp">Pagamento único. Menos que uma capinha de celular; um golpe custa o estoque.</div>
+      <a class="btn" href="https://pay.kiwify.com.br/GPeZoeg">Quero blindar minha loja</a>
+      <span class="btn-note" style="color:var(--muted)">Pix, cartão em até 3x ou boleto. Acesso imediato por e-mail.</span>
+      <ul>
+        <li>Checklist interativo de 30 itens, com caixinha para marcar e o caminho de cada configuração</li>
+        <li>4 golpes dissecados, um card por golpe, e plano de emergência da primeira hora</li>
+        <li>Dúvidas respondidas no direct em até 48 horas úteis</li>
+        <li>Versão nova sem custo toda vez que um menu mudar ou um golpe novo aparecer</li>
+        <li>Selo Loja Blindada verificado, com código público, ao concluir os blocos</li>
+      </ul>
+      <p class="guarantee">Garantia de 7 dias pela Kiwify, sem pergunta. O reembolso encerra o acompanhamento: sem atualizações, sem canal de dúvidas e sem Selo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Preciso entender de tecnologia?</summary><p>Não. Cada item mostra o caminho do menu e explica em uma frase o que o termo significa. Se você sabe mexer no Instagram, consegue fazer tudo.</p></details>
+    <details><summary>Minha loja não é de eletrônicos. Serve?</summary><p>Sim. Os golpes e as configurações são os mesmos para qualquer loja que vende pelo Instagram, WhatsApp ou marketplace. Os exemplos usam eletrônicos porque é o alvo preferido dos golpistas.</p></details>
+    <details><summary>Os menus dos aplicativos mudam. O material vai ficar velho?</summary><p>Cada item traz também a palavra para buscar nas configurações, então funciona mesmo quando o menu muda de lugar. E quem comprou recebe a versão atualizada.</p></details>
+    <details><summary>Quanto tempo leva?</summary><p>Blocos 1, 2 e 3 levam cerca de 90 minutos hoje. Blocos 4 e 5 são leitura de 30 minutos amanhã. Daí o nome.</p></details>
+    <details><summary>Como recebo?</summary><p>Pagou, o checklist é liberado na hora na área de membros da Kiwify, com link também por e-mail. O arquivo é um PDF interativo: abre no celular e as caixinhas ficam marcadas.</p></details>
+    <details><summary>O que é o Selo Loja Blindada?</summary><p>Ao terminar, você manda três prints das configurações (dois fatores no Instagram, duas etapas no WhatsApp e a lista de acessos do Business Suite). Eu confiro e emito um selo com o nome da loja, o mês e um código único, que fica listado publicamente no @mizpahcyber. É a prova, para os seus clientes, de que a loja levou a segurança deles a sério. Qualquer cliente confere o código em lojablindada.netlify.app/selo.</p></details>
+    <details><summary>E se não gostar?</summary><p>Pede o reembolso em até 7 dias pela própria Kiwify, sem pergunta. Só faça os blocos antes: a maior parte do valor está nas configurações feitas, não na leitura.</p></details>
+    <details><summary>Se eu pedir reembolso, perco o Selo?</summary><p>Sim. O Selo, as versões novas e o canal de dúvidas são para quem está na lista de compradores. O arquivo continua no seu celular, mas vira só um arquivo: sem versão nova quando o menu mudar e sem ninguém para perguntar.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Loja Blindada em 48h · Beto Mendes · <a href="https://instagram.com/mizpahcyber">@mizpahcyber</a><br>Material educativo. Não substitui a orientação do seu banco, da sua operadora ou de um advogado em caso de prejuízo.</div>
+</footer>
+
+<div class="sticky">
+  <div class="p">Loja Blindada em 48h<small>R$67 · checklist + acompanhamento + Selo</small></div>
+  <a class="btn" href="https://pay.kiwify.com.br/GPeZoeg">Comprar</a>
+</div>
+
+</body>
+</html>
