@@ -14,7 +14,7 @@ button{font:inherit;font-weight:600;padding:12px 18px;border-radius:10px;border:
 .card.ok{border-color:#22C55E}.card.exp{border-color:#F2B33D}.card.no{border-color:#E5484D}
 .card .texture{position:absolute;inset:0;opacity:.4;background-image:radial-gradient(circle,rgba(242,179,61,.12) 1px,transparent 1px);background-size:9px 9px;pointer-events:none}
 .card .ribbon{position:absolute;top:20px;right:-32px;background:linear-gradient(135deg,#F2B33D,#c98f1f);color:#101D33;font-weight:800;font-size:11px;letter-spacing:1.2px;padding:5px 44px;transform:rotate(40deg);box-shadow:0 4px 10px rgba(0,0,0,.35)}
-.card .badge-icon{width:56px;height:62px;margin:0 auto 14px;display:block}
+.card .badge-icon{width:62px;height:62px;margin:0 auto 14px;display:block}
 .status{font-weight:700;font-size:18px;margin:0 0 12px;text-align:center}
 .ok .status{color:#22C55E}.exp .status{color:#F2B33D}.no .status{color:#E5484D}
 .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #1E2C45;font-size:15px}
@@ -33,14 +33,12 @@ const out=document.getElementById('out'),inp=document.getElementById('c');
 const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
 function icon(cls){
   const mark=cls==='ok'
-    ?'<path d="M20 34 L29 44 L46 22" stroke="#22C55E" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>'
+    ?'<path d="M31 53 L44 66 L70 37" stroke="#22C55E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
     :cls==='exp'
-    ?'<path d="M32 20 L32 40" stroke="#F2B33D" stroke-width="6.5" stroke-linecap="round"/><circle cx="32" cy="50" r="3.6" fill="#F2B33D"/>'
-    :'<path d="M22 24 L42 46 M42 24 L22 46" stroke="#E5484D" stroke-width="6.5" stroke-linecap="round"/>';
-  return `<svg class="badge-icon" viewBox="0 0 64 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs><linearGradient id="shieldG-${cls}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E2E4C"/><stop offset="1" stop-color="#0F1A2E"/></linearGradient></defs>
-    <path d="M32 2 L60 12 L60 34 L52 52 L32 68 L12 52 L4 34 L4 12 Z" fill="url(#shieldG-${cls})" stroke="#F2B33D" stroke-width="2.5"/>
-    <path d="M32 8 L54 16 L54 33 L47 48 L32 60 L17 48 L10 33 L10 16 Z" fill="none" stroke="#3B4A63" stroke-width="1"/>
+    ?'<path d="M50 36 L50 58" stroke="#F2B33D" stroke-width="9" stroke-linecap="round"/><circle cx="50" cy="68" r="5" fill="#F2B33D"/>'
+    :'<path d="M35 39 L66 66 M66 39 L35 66" stroke="#E5484D" stroke-width="9" stroke-linecap="round"/>';
+  return `<svg class="badge-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="50,3 90,16 90,49 82,70 68,87 50,98 32,87 18,70 10,49 10,16" fill="#16233A" stroke="#F2B33D" stroke-width="5" stroke-linejoin="round"/>
     ${mark}
   </svg>`;
 }
